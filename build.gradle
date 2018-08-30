@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'info.woody.java.examples'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDirs = [ 'src/main/java' ]
+        }
+        java {
+            srcDirs = [ ] // don't compile Java code twice
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
